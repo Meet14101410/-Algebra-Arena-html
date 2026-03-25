@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Algebra Arena</title>
+</head>
+<body style="text-align:center; font-family:Arial;">
+
+  <h1>Algebra Arena</h1>
+  <p>Solve: 5x + 3 = 18</p>
+
+  <input type="number" id="answer" placeholder="Enter x">
+  <button onclick="checkAnswer()">Submit</button>
+
+  <p id="result"></p>
+
+  <script>
+    function checkAnswer() {
+      let ans = document.getElementById("answer").value;
+      if (ans == 3) {
+        document.getElementById("result").innerHTML = "✅ Correct!";
+      } else {
+        document.getElementById("result").innerHTML = "❌ Try Again!";
+      }
+    }
+  </script>
+
+</body>
+</html>
