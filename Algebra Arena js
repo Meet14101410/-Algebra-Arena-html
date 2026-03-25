@@ -1,0 +1,31 @@
+let score = 0;
+
+function generateQuestion() {
+  let x = Math.floor(Math.random() * 10) + 1;
+  let a = Math.floor(Math.random() * 5) + 1;
+  let b = Math.floor(Math.random() * 10);
+
+  let result = a * x + b;
+
+  document.getElementById("question").innerHTML = `${a}x + ${b} = ${result}`;
+  document.getElementById("question").dataset.answer = x;
+}
+
+function checkAnswer() {
+  let userAns = document.getElementById("answer").value;
+  let correctAns = document.getElementById("question").dataset.answer;
+
+  if (userAns == correctAns) {
+    score++;
+    document.getElementById("result").innerHTML = "✅ Correct!";
+  } else {
+    document.getElementById("result").innerHTML = "❌ Wrong! Answer: " + correctAns;
+  }
+
+  document.getElementById("score").innerHTML = "Score: " + score;
+  document.getElementById("answer").value = "";
+  generateQuestion();
+}
+
+// Start first question
+window.onload = generateQuestion;
